@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffff"
+    tools:context="com.englivia.quiz.activity.InstructionActivity"
+    >
+
+    <include layout="@layout/toolbar_layout" />
+
+    <RelativeLayout
+        android:id="@+id/contents_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolBar"
+        >
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/tvPlay">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/instext1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:text="@string/instractin_text1"
+                    android:textAlignment="center"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:id="@+id/instext2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="15dp"
+                    android:textColor="@color/white"
+                    android:text="@string/instractin_text2"
+                    android:layout_below="@+id/instext1"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/instext3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/instext2"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:text="@string/instractin_text3"
+                    android:textAlignment="center"
+                    android:textSize="15dp"/>
+
+                <TextView
+                    android:id="@+id/instext4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/instext3"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:text="@string/instractin_text4"
+                    android:textAlignment="center"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="50dp"/>
+            </RelativeLayout>
+
+
+        </ScrollView>
+
+
+        <TextView
+            android:id="@+id/tvPlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/top_corner_gradient_bg"
+            android:gravity="center"
+            android:onClick="Start"
+            android:padding="@dimen/margin_dp"
+            android:text="@string/lets_play"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+</RelativeLayout>
+
+

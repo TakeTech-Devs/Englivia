@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "309401246518",
+    "project_id": "englivia-bf5cf",
+    "storage_bucket": "englivia-bf5cf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309401246518:android:0f1dff314ff96716553197",
+        "android_client_info": {
+          "package_name": "com.englivia.quiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "309401246518-nka1j8d0cr6ps2f6jt7p7kdr1agjd723.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa6CIFo0hmlR6OBl9jqiCAkBSQZPpbnE4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "309401246518-nka1j8d0cr6ps2f6jt7p7kdr1agjd723.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

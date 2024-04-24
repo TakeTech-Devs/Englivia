@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbgpg"
+    >
+
+    <RelativeLayout
+        android:id="@+id/toplyt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvPrivacy"
+        >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <LinearLayout
+                    android:id="@+id/emailliner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="350dp"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/loginpg2" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:gravity="center"
+                        android:text="Login Here!"
+                        android:textColor="#9C27B0"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Log in to your existing account"
+                        android:textColor="#353235"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/loginrlyst"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="@dimen/padding_15"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginEnd="@dimen/padding_15"
+                        android:layout_marginBottom="@dimen/margin_20dp"
+                        android:layout_weight="1"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:divider="@android:color/transparent"
+                        android:dividerHeight="0.0px"
+                        android:elevation="15dp"
+                        android:outlineSpotShadowColor="#9C27B0"
+                        app:cardCornerRadius="30dp"
+                        card_view:cardElevation="15dp"
+                        card_view:cardPreventCornerOverlap="false">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/inputEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_dp"
+                            android:layout_marginEnd="@dimen/margin_dp"
+                            android:padding="5dp"
+                            android:textColorHint="@color/gray"
+                            app:hintTextColor="@color/black">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edtEmail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:background="@color/transparent"
+                                android:drawableLeft="@drawable/email"
+                                android:drawablePadding="10dp"
+                                android:hint="@string/email"
+                                android:inputType="textEmailAddress"
+                                android:maxLines="1"
+                                android:textColor="@color/black"
+                                android:textCursorDrawable="@drawable/curser_drawable"
+                                android:textStyle="bold" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/loginrlysst"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="@dimen/padding_15"
+                        android:layout_marginEnd="@dimen/padding_15"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:divider="@android:color/transparent"
+                        android:dividerHeight="0.0px"
+                        android:elevation="15dp"
+                        android:outlineSpotShadowColor="#9C27B0"
+                        app:cardCornerRadius="30dp"
+                        card_view:cardElevation="15dp"
+                        card_view:cardPreventCornerOverlap="false">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/inputPass"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/margin_dp"
+                            android:layout_marginEnd="@dimen/margin_dp"
+                            android:padding="5dp"
+                            android:textColorHint="@color/gray"
+                            app:hintTextColor="@color/black">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edtPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="8dp"
+                                android:background="@color/transparent"
+
+                                android:drawableLeft="@drawable/padlock"
+                                android:drawablePadding="10dp"
+                                android:gravity="center_vertical"
+                                android:hint="@string/password"
+                                android:inputType="textPassword"
+                                android:maxLines="1"
+                                android:textColor="@color/black"
+                                android:textCursorDrawable="@drawable/curser_drawable"
+                                android:textStyle="bold" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/fragmenttxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="@dimen/txt_size_20"
+                        android:text="@string/forgot_pass"
+                        android:textColor="#C80E00"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/loginrlyt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="@dimen/margin_10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="@dimen/margin_10dp"
+                        android:layout_marginBottom="@dimen/margin_20dp"
+                        android:layout_weight="1"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:divider="@android:color/transparent"
+                        android:dividerHeight="0.0px"
+                        android:elevation="8dp"
+                        app:cardBackgroundColor="#061EFA"
+                        app:cardCornerRadius="30dp"
+                        card_view:cardElevation="7dp"
+                        card_view:cardPreventCornerOverlap="false">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="50dp"
+                            android:layout_marginTop="@dimen/padding_10"
+                            android:layout_marginEnd="50dp"
+                            android:layout_marginBottom="@dimen/padding_10"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:gravity="center"
+
+                            android:text="@string/login"
+                            android:textAllCaps="true"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp" />
+
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/loginLyt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/emailliner"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <RelativeLayout
+                        android:id="@+id/googleryt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <com.englivia.quiz.helper.CircleImageView1
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_google" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/faceookryt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <com.englivia.quiz.helper.CircleImageView1
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_facebookimg" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/mobileryt2"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="5dp"
+                        android:visibility="gone">
+
+                        <com.englivia.quiz.helper.CircleImageView1
+
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@drawable/ic_phoneimg" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/mobileryt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                       >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/gradient_cat_green"
+                            android:text="Login Using Phone"
+                            android:textColor="@color/white"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"/>
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvPrivacy1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvPrivacy"
+        android:layout_marginBottom="@dimen/padding_10"
+        android:gravity="center"
+        android:text="Copyright @ Englivia || All Copyrights Reserved"
+        android:textColor="@color/white"
+        android:textSize="@dimen/small_text"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tvPrivacy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        android:gravity="center"
+       android:layout_marginBottom="5dp"
+        android:text="@string/term_privacy"
+        android:textColor="@color/white"
+        android:textSize="@dimen/small_text"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+
+
+</RelativeLayout>

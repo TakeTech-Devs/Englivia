@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="50dp"
+    android:background="#00FFFFFF"
+    android:orientation="vertical"
+    android:elevation="10dp">
+
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/language_gradient"
+        android:gravity="center"
+        android:padding="@dimen/margin_10dp"
+        android:text="@string/select_language"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvenglish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitle"
+        android:background="@drawable/blue_white_bg"
+        android:padding="@dimen/padding_15"
+        android:text="English"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txt_size_16"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvHindi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvenglish"
+        android:background="@drawable/blue_white_bg"
+        android:padding="@dimen/padding_15"
+        android:text="Hindi"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txt_size_16"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvArbic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvHindi"
+        android:background="@drawable/blue_white_bg"
+        android:padding="@dimen/padding_15"
+        android:text="Bangla"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txt_size_16"
+        android:textStyle="bold"
+
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvArbic"
+        android:background="@drawable/half_curved_blue"
+        android:gravity="center"
+        android:padding="@dimen/margin_10dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/mid_text" />
+</RelativeLayout>

@@ -1,0 +1,1192 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.MainActivity">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relative_top"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginBottom="@dimen/margin_10dp"
+        android:background="@drawable/circle_pink_gradient">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10dp"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            shimmer:contentInsetLeft="0dp"
+            shimmer:contentInsetStart="0dp"
+            shimmer:contentInsetStartWithNavigation="0dp"
+            shimmer:titleTextAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            shimmer:titleTextColor="@color/white">
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/img_back_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_20dp"
+                    android:background="@drawable/ic_new_drawer"
+                    tools:ignore="ContentDescription" />
+
+
+                <ImageView
+                    android:id="@+id/imgStore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignWithParentIfMissing="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/padding_10"
+                    android:layout_toStartOf="@+id/imgLanguage"
+                    android:background="@drawable/main_btn"
+                    android:padding="@dimen/margin_10dp"
+
+                    android:visibility="gone"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/imgLanguage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:visibility="gone"
+                    tools:ignore="ContentDescription" />
+
+
+            </RelativeLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <com.englivia.quiz.helper.CircleImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/toolBar"
+            android:layout_marginStart="@dimen/padding_15"
+            android:layout_marginTop="@dimen/margin_10dp"
+            android:layout_marginBottom="@dimen/margin_20dp"
+            shimmer:civ_border_color="@color/white"
+            shimmer:civ_border_width="2dp" />
+
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolBar"
+            android:layout_marginStart="@dimen/margin_10dp"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:layout_toEndOf="@+id/imgProfile"
+            android:fontFamily="@font/open_sans_bold"
+            android:maxLines="1"
+            android:padding="5dp"
+            android:text="@string/name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvName"
+            android:layout_marginBottom="@dimen/padding_10"
+            android:layout_toEndOf="@+id/imgProfile"
+            android:padding="5dp"
+            android:visibility="gone">
+
+
+            <TextView
+                android:id="@+id/tv_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+
+                android:background="@drawable/shadow_curved"
+                android:drawablePadding="@dimen/margin_10dp"
+                android:paddingStart="@dimen/padding_10"
+                android:paddingTop="@dimen/margin_5dp"
+                android:paddingEnd="@dimen/padding_10"
+                android:paddingBottom="@dimen/margin_5dp"
+                android:text="@string/zero"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_12sp"
+                android:textStyle="bold"
+                shimmer:drawableStartCompat="@drawable/ic_new_points"
+                shimmer:drawableTint="@color/white" />
+
+
+            <TextView
+                android:id="@+id/tv_coin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_5dp"
+                android:layout_toEndOf="@+id/tv_score"
+                android:background="@drawable/shadow_curved"
+                android:drawablePadding="@dimen/margin_10dp"
+                android:paddingStart="@dimen/margin_dp"
+                android:paddingTop="@dimen/margin_5dp"
+                android:paddingEnd="@dimen/margin_dp"
+                android:paddingBottom="@dimen/margin_5dp"
+                android:text="@string/zero"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_12sp"
+                android:textStyle="bold"
+                shimmer:drawableStartCompat="@drawable/ic_new_coins"
+                shimmer:drawableTint="@color/white" />
+
+
+            <TextView
+                android:id="@+id/tv_rank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/tv_coin"
+                android:background="@drawable/shadow_curved"
+                android:drawablePadding="@dimen/margin_10dp"
+                android:paddingStart="@dimen/margin_dp"
+                android:paddingTop="@dimen/margin_5dp"
+                android:paddingEnd="@dimen/margin_dp"
+                android:paddingBottom="@dimen/margin_5dp"
+                android:text="@string/zero"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_12sp"
+                android:textStyle="bold"
+                shimmer:drawableStartCompat="@drawable/ic_new_leaderboard"
+                shimmer:drawableTint="@color/white" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/relative_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:visibility="visible" />
+
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/recyclerView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recyclerView1"
+            android:layout_centerHorizontal="true"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recyclerView2"
+            android:orientation="horizontal"
+            android:layout_marginTop="-5dp"
+            android:weightSum="2">
+
+            <!--xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+
+            <RelativeLayout
+                android:id="@+id/cat_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardQuiz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:background="@color/blue"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="0.0px"
+                    android:elevation="8dp"
+                    app:cardCornerRadius="8dp"
+                    card_view:cardElevation="10dp"
+                    card_view:cardPreventCornerOverlap="false">
+
+                    <RelativeLayout
+                        android:id="@+id/nameLyt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:id="@+id/imgCircles"
+                            android:layout_width="1dp"
+                            android:layout_height="1dp"
+                            android:layout_alignParentEnd="true"
+                            android:alpha="0.5"
+                            android:padding="5dp"
+                            android:src="@drawable/trans_circle"
+                            android:visibility="gone"
+                            app:tint="@color/black" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:orientation="vertical"
+
+                            >
+
+
+
+
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toEndOf="@+id/cateImg"
+                                >
+
+                                <TextView
+                                    android:id="@+id/dict"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin_5dp"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/open_sans_semibold"
+                                    android:gravity="center_vertical"
+                                    android:maxLines="2"
+                                    android:paddingTop="50dp"
+                                    android:paddingBottom="10dp"
+                                    android:text="Newspaper Words"
+                                    android:background="#001D6CBA"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@color/black" />
+
+
+                                <TextView
+                                    android:id="@+id/noofque"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/dict"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp"
+                                    android:visibility="gone"
+
+                                    />
+
+                                <ImageView
+                                    android:id="@+id/arrow"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:background="@drawable/ic_baseline_arrow_forward_ios_24"
+                                    android:visibility="gone" />
+
+                                <com.android.volley.toolbox.NetworkImageView
+                                    android:id="@+id/cateImg"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/earth"
+                                    />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+
+            </RelativeLayout>
+           <!-- <RelativeLayout
+                android:id="@+id/cat_layout1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:layout_height="wrap_content"
+                >
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardQuiz1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="0.0px"
+                    android:elevation="8dp"
+                    app:cardCornerRadius="8dp"
+                    card_view:cardElevation="10dp"
+                    android:layout_margin="10dp"
+                    card_view:cardPreventCornerOverlap="false"
+                    android:background="@color/blue"
+                    >
+
+                    <RelativeLayout
+                        android:id="@+id/nameLyt1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:id="@+id/imgCircles1"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_alignParentEnd="true"
+                            android:alpha="0.5"
+                            android:padding="5dp"
+                            android:src="@drawable/trans_circle"
+                            android:visibility="gone"
+                            app:tint="@color/black" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:orientation="vertical"
+                            android:padding="@dimen/margin_10dp">
+
+
+                            <com.android.volley.toolbox.NetworkImageView
+                                android:id="@+id/cateImg1"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/earth" />
+
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toEndOf="@+id/cateImg">
+
+                                <TextView
+                                    android:id="@+id/dict1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin_5dp"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/open_sans_semibold"
+                                    android:gravity="center_vertical"
+                                    android:maxLines="2"
+                                    android:text="Newspaper Words"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@color/black" />
+
+
+                                <TextView
+                                    android:id="@+id/noofque1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/dict1"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp"
+                                    android:visibility="gone"
+
+                                    />
+
+                                <ImageView
+                                    android:id="@+id/arrow1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:background="@drawable/ic_baseline_arrow_forward_ios_24"
+                                    android:visibility="gone" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+
+            </RelativeLayout>-->
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="visible" />
+            <RelativeLayout
+                android:layout_marginTop="@dimen/padding_10"
+                android:id="@+id/lytCategory1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/img_play1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_dp"
+                    android:background="@drawable/ic_quiz_zone"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:visibility="gone"
+
+                    android:id="@+id/txtQuiZone1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toStartOf="@+id/tv_view_all1"
+                    android:layout_toEndOf="@+id/img_play1"
+                    android:text="@string/quiz_zone"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:visibility="gone"
+
+                    android:id="@+id/tv_view_all1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/margin_10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="@dimen/margin_10dp"
+                    android:text="@string/view_all"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_play1"
+                    android:layout_centerHorizontal="true" />
+
+            </RelativeLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lytCategory1"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="@dimen/padding_10"
+                        android:layout_weight="1"
+                        shimmer:cardCornerRadius="@dimen/margin_10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="Dictionary"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_view_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/banner_AdView"
+            android:layout_below="@+id/relative_top"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            shimmer:duration="800"
+            tools:ignore="MissingConstraints">
+
+            <!-- Adding 7 rows of placeholders -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/layout_catshimer"
+                    android:visibility="gone"/>
+
+                <include layout="@layout/layout_catshimer"
+                    android:visibility="gone"/>
+
+                <include layout="@layout/layout_catshimer"
+                    android:visibility="gone"/>
+
+                <include layout="@layout/layout_catshimer"
+                    android:visibility="gone" />
+
+                <include layout="@layout/layout_catshimer"
+                    android:visibility="gone"/>
+
+                <include layout="@layout/layout_catshimer"
+                    android:visibility="gone"/>
+
+                <include layout="@layout/layout_catshimer"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <TextView
+            android:id="@+id/txtblanklist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/no_category"
+            android:textColor="@color/txt_color"
+            android:textSize="@dimen/mid_text"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/banner_AdView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            shimmer:layout_constraintBottom_toBottomOf="parent"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:shimmer="http://schemas.android.com/apk/res-auto" />
+    </LinearLayout>
+
+
+    <ScrollView
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+
+            <RelativeLayout
+                android:id="@+id/lytLearning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                >
+
+                <ImageView
+                    android:id="@+id/learning_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_dp"
+                    android:background="@drawable/ic_baseline_menu_book_24"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/txtLearningZone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_15"
+
+                    android:layout_toEndOf="@+id/learning_img"
+                    android:text="@string/learning_zone"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/txt_size_16"
+                    android:textStyle="bold" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/LearningCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/learning_img"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/padding_15"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:layout_marginEnd="@dimen/padding_15"
+                    android:layout_marginBottom="@dimen/margin_10dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="0.0px"
+                    android:elevation="8dp"
+                    android:onClick="LearningZone"
+                    shimmer:cardCornerRadius="@dimen/margin_20dp"
+                    shimmer:cardElevation="7dp"
+                    shimmer:cardPreventCornerOverlap="false">
+
+
+                    <RelativeLayout
+                        android:id="@+id/LearningCardRelay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/gradient_cat_blue">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/ic_learning"
+                            android:padding="@dimen/padding_15"
+                            android:layout_marginEnd="@dimen/margin_10dp"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/txtLearning"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/txt_size_20"
+                            android:layout_marginTop="@dimen/margin_20dp"
+
+                            android:fontFamily="@font/open_sans_bold"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:text="@string/learning_play"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+
+                        <TextView
+                            android:id="@+id/tvLearning"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtLearning"
+                            android:layout_marginStart="@dimen/margin_20dp"
+                            android:layout_marginTop="@dimen/padding_30"
+                            android:layout_marginBottom="@dimen/margin_20dp"
+                            android:drawablePadding="@dimen/padding_10"
+                            android:paddingStart="@dimen/margin_10dp"
+                            android:paddingEnd="@dimen/margin_10dp"
+                            android:paddingBottom="5dp"
+                            android:text="@string/play_now"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            shimmer:drawableStartCompat="@drawable/ic_play" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lytCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lytLearning"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/img_play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_dp"
+                    android:background="@drawable/ic_quiz_zone"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/txtQuiZone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toStartOf="@+id/tv_view_all"
+                    android:layout_toEndOf="@+id/img_play"
+                    android:text="@string/quiz_zone"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_view_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/margin_10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="@dimen/margin_10dp"
+                    android:text="@string/view_all"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_play"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="@dimen/margin_10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="@dimen/margin_10dp" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/img_battle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lytCategory"
+                android:layout_marginStart="@dimen/margin_dp"
+                android:background="@drawable/ic_play_quiz"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/txtPlayZone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lytCategory"
+                android:layout_marginStart="@dimen/margin_10dp"
+                android:layout_toEndOf="@+id/img_battle"
+                android:text="@string/play_zone"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/txt_size_16"
+                android:textStyle="bold" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/PlayMode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_battle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/margin_10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="@dimen/margin_10dp" />
+
+            <ImageView
+                android:id="@+id/img_battle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/PlayMode"
+                android:layout_marginStart="@dimen/margin_dp"
+                android:background="@drawable/ic_battle_quiz"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/txtBattleZone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/PlayMode"
+                android:layout_marginStart="@dimen/padding_15"
+                android:layout_toEndOf="@+id/img_battle"
+                android:text="@string/battle_zone"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/txt_size_16"
+                android:textStyle="bold" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/GroupBattle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_battle1"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/padding_15"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:layout_marginEnd="@dimen/padding_15"
+                android:layout_marginBottom="@dimen/margin_10dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0.0px"
+                android:elevation="8dp"
+                android:onClick="GroupBattle"
+                shimmer:cardCornerRadius="@dimen/margin_20dp"
+                shimmer:cardElevation="7dp"
+                shimmer:cardPreventCornerOverlap="false">
+
+
+                <RelativeLayout
+                    android:id="@+id/cardTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/gradient_cat_blue">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/ic_g_battle"
+                        android:padding="@dimen/padding_10"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/item_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_20dp"
+                        android:layout_marginTop="@dimen/margin_20dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/group_battle"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+
+                    <TextView
+                        android:id="@+id/tv_play"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/item_title"
+                        android:layout_marginTop="@dimen/padding_30"
+                        android:layout_marginBottom="@dimen/margin_20dp"
+                        android:drawablePadding="@dimen/padding_10"
+                        android:paddingStart="@dimen/margin_10dp"
+                        android:paddingEnd="@dimen/margin_10dp"
+                        android:paddingBottom="5dp"
+                        android:text="@string/play_now"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        shimmer:drawableStartCompat="@drawable/ic_play" />
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/otoBattle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/GroupBattle"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/padding_15"
+                android:layout_marginEnd="@dimen/padding_15"
+                android:layout_marginBottom="@dimen/margin_10dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0.0px"
+                android:elevation="8dp"
+                android:onClick="OneToOneBattle"
+                shimmer:cardCornerRadius="@dimen/margin_20dp"
+                shimmer:cardElevation="7dp"
+                shimmer:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/gradient_cat_pink">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/ic_onevsone"
+                        android:padding="@dimen/padding_10"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvOneToOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_20dp"
+                        android:layout_marginTop="@dimen/margin_20dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/one_to_one_battle"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+
+                    <TextView
+                        android:id="@+id/tv_oto_play"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvOneToOne"
+                        android:layout_marginStart="@dimen/margin_20dp"
+                        android:layout_marginTop="@dimen/padding_30"
+                        android:layout_marginBottom="@dimen/margin_20dp"
+                        android:drawablePadding="@dimen/padding_10"
+                        android:paddingStart="@dimen/margin_10dp"
+
+                        android:paddingEnd="@dimen/margin_10dp"
+                        android:paddingBottom="5dp"
+                        android:text="@string/play_now"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        shimmer:drawableStartCompat="@drawable/ic_play"
+
+                        />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/randomBattle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/otoBattle"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/padding_15"
+                android:layout_marginEnd="@dimen/padding_15"
+                android:layout_marginBottom="@dimen/margin_10dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0.0px"
+                android:elevation="8dp"
+                android:onClick="RandomBattle"
+                shimmer:cardCornerRadius="@dimen/margin_20dp"
+                shimmer:cardElevation="7dp"
+                shimmer:cardPreventCornerOverlap="false">
+
+
+                <RelativeLayout
+                    android:id="@+id/random_card_relay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/gradient_cat_sky">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/ic_random"
+                        android:padding="@dimen/margin_dp"
+                        tools:ignore="ContentDescription"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_random"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/txt_size_20"
+                        android:layout_marginTop="@dimen/margin_20dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/random_battle"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+
+                    <TextView
+                        android:id="@+id/tv_random_play"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_random"
+                        android:layout_marginStart="@dimen/margin_20dp"
+                        android:layout_marginTop="@dimen/padding_30"
+                        android:layout_marginBottom="@dimen/margin_20dp"
+                        android:drawablePadding="@dimen/padding_10"
+                        android:paddingStart="@dimen/margin_10dp"
+                        android:paddingEnd="@dimen/margin_10dp"
+                        android:paddingBottom="5dp"
+                        android:text="@string/play_now"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        shimmer:drawableStartCompat="@drawable/ic_play" />
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:id="@+id/lytContest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/randomBattle">
+
+
+                <ImageView
+                    android:id="@+id/contest_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_dp"
+                    android:background="@drawable/ic_contest_quiz"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/txtContestZone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_15"
+                    android:layout_toEndOf="@+id/contest_img"
+                    android:text="@string/contest_zone"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/txt_size_16"
+                    android:textStyle="bold" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/ContestCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/contest_img"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/padding_15"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:layout_marginEnd="@dimen/padding_15"
+                    android:layout_marginBottom="@dimen/margin_10dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="0.0px"
+                    android:elevation="8dp"
+                    android:onClick="ContestQuiz"
+                    shimmer:cardCornerRadius="@dimen/margin_20dp"
+                    shimmer:cardElevation="7dp"
+                    shimmer:cardPreventCornerOverlap="false">
+
+
+                    <RelativeLayout
+                        android:id="@+id/ContestCardRelay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/gradient_cat_green">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/ic_contest"
+                            android:padding="@dimen/padding_15"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/txtContest"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/txt_size_20"
+                            android:layout_marginTop="@dimen/margin_20dp"
+
+                            android:fontFamily="@font/open_sans_bold"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:text="@string/contest_play"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+
+                        <TextView
+                            android:id="@+id/tvContest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtContest"
+                            android:layout_marginStart="@dimen/margin_20dp"
+                            android:layout_marginTop="@dimen/padding_30"
+                            android:layout_marginBottom="@dimen/margin_20dp"
+                            android:drawablePadding="@dimen/padding_10"
+                            android:paddingStart="@dimen/margin_10dp"
+                            android:paddingEnd="@dimen/margin_10dp"
+                            android:paddingBottom="5dp"
+                            android:text="@string/join_now"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            shimmer:drawableStartCompat="@drawable/ic_play" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
+</ScrollView>
